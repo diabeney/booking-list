@@ -1,0 +1,15 @@
+.hero-section {
+ height: fit-content;
+ width: 80%;
+ margin-inline: auto;
+}
+
+.list-items {
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 1.2rem;
+ background-color: #fff;
+box-shadow: 0px 2px 16px rgba(184, 184, 184, 0.541);
+}
