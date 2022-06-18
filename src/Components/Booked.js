@@ -20,16 +20,33 @@ function Booked({ props }) {
     },[total])
    
   return (
-      <aside>
-          <section>
-              <h1>Total Number of Items:  </h1>
-              {items.map(item => {
-                  return <li key={item.id}>{item.name}  -<span>{item.quantity}</span></li>
-              })}
+
+      <table>
+          <thead>
+          <tr>
+              <th colSpan={2}>Items Selected</th>
+              <th>Price</th>
+              <th>Quantity</th>
+          </tr>
               
-          </section>
-          <h1>Total Price: {price}</h1>
-      </aside>
+          </thead>
+          <tbody>
+              
+          {items.map(item => {
+              return <tr>
+                  <td colSpan={2}>{item.name}</td>
+                  <td>${item.price}</td>
+                  <td>{item.quantity}</td>
+                  </tr>
+          })}
+          </tbody>
+          <tfoot>
+          <tr>
+             <th colSpan={2}>Total Amount:</th> 
+              <th colSpan={2}>${ price }</th> 
+          </tr>   
+          </tfoot>
+      </table>
   )
 }
 

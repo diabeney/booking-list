@@ -30,17 +30,17 @@ function BookingLists({ props }) {
                   return <div  className='list-items'>
                       <h3>{element.name}</h3>
                       <p>${element.price}</p>
-                      { (element.quantity === 0) ?  null : <span>{element.quantity}</span>}
+                      { (element.quantity === 0) ?  null : <div className='booked-counter'>{element.quantity}</div>}
                       <div>
                           
-                      <button onClick={() => {handleAddition(element)}}>+</button>
-                      <button onClick={() => {handleSubtraction(element)}}>-</button>
+                      <button className="btn" onClick={() => {handleAddition(element)}}>+</button>
+                      <button className="btn" onClick={() => {handleSubtraction(element)}}>-</button>
                      </div>
 
                       </div>
             })
             }
-            <button onClick={()=>{toggleCart()}}>View Cart</button>
+            <button className='btn view-cart' onClick={()=>{toggleCart()}}>View Cart</button>
             <div style={{display: cart ? "none" :  "block"}}>
                 <Booked props={booked} />
             </div>
