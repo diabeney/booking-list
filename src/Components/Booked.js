@@ -4,14 +4,14 @@ function Booked({ props }) {
     const [price, setPrice] = useState(0);
     
     let items = [];
-    const totalPrice = props.map(element => {
+    const handlePriceAndProducts = props.map(element => {
         if (element.quantity !== 0) {
             items.push(element)
         }
         return element.price * element.quantity;
    })
 
-    const total = totalPrice.reduce((prev, curr) => {
+    const total = handlePriceAndProducts.reduce((prev, curr) => {
       return prev + curr
    })
 
