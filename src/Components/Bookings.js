@@ -12,10 +12,21 @@ const STOCK = {
   ]
 }
 
+function filterer(e) {
+  e.preventDefault();
+ alert('this is not logged')
+
+}
+
 function Bookings() {
   return (
     <div className='hero-section'>
       <h1>Shopping List</h1>
+      <form onSubmit={e => filterer(e)} >
+        <input type="search" placeholder='Search' />
+        <label htmlFor="checkbox">Filter by in stock</label>
+        <input type="checkbox" />
+      </form>
       <BookingLists props={STOCK.products} />  
    </div>
  )

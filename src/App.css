@@ -1,10 +1,12 @@
 h1 {
   color: rgb(70, 70, 70);
+  
 }
 .hero-section {
  height: fit-content;
  max-width: min(750px,80%);
  margin-inline: auto;
+ text-align: center;
 }
 
 .list-items {
@@ -68,7 +70,7 @@ box-shadow: 0px 4px 10px rgba(184, 184, 184, 0.341);
 }
 
 table,td,th{
-  border: 1px solid rgba(53, 53, 53, 0.33);
+  border: 1px solid rgba(53, 53, 53, 0.13);
   border-collapse: collapse;
 }
 

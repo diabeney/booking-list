@@ -40,8 +40,8 @@ function BookingLists({ props }) {
                       </div>
             })
             }
-            <button className='btn view-cart' onClick={()=>{toggleCart()}}>View Cart</button>
-            <div style={{display: cart ? "none" :  "block"}}>
+            <button className='btn view-cart' onClick={() => { toggleCart() }}>{ cart ? 'View Cart': 'Close Cart'}</button>
+            <div style={{display: cart ? "none" :  "block",marginTop: '2rem'}}>
                 <Booked props={booked} />
             </div>
     </>
