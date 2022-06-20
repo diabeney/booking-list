@@ -3,7 +3,7 @@ h1 {
   
 }
 .hero-section {
- height: fit-content;
+ height: 200vh;
  max-width: min(750px,80%);
  margin-inline: auto;
  text-align: center;
@@ -52,6 +52,10 @@ box-shadow: 0px 4px 10px rgba(184, 184, 184, 0.341);
 
 .btn:where(.view-cart):hover {
   background-color: rgb(12, 85, 42);
+}
+
+.btn:not(.view-cart):disabled:hover {
+  background-color: rgba(185, 184, 184, 0.157);
 }
 
 .booked-counter {

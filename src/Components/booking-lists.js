@@ -1,9 +1,7 @@
 import React,{useState} from 'react';
 import Booked from '../Components/Booked';
 
-
 function BookingLists({ props }) {
-
     const PRODUCTS = [...props]
     const [booked, setBooked] = useState(PRODUCTS);
     const [cart, setCart] = useState(true);
@@ -27,14 +25,14 @@ function BookingLists({ props }) {
         <>
           {
               booked.map((element) => {
-                  return <div  className='list-items'>
-                      <h3>{element.name}</h3>
+                  return <div key={element.id} className='list-items'>
+                      <h3 >{element.name}</h3>
                       <p>${element.price}</p>
                       { (element.quantity === 0) ?  null : <div className='booked-counter'>{element.quantity}</div>}
                       <div>
                           
                       <button className="btn" onClick={() => {handleAddition(element)}}>+</button>
-                      <button className="btn" onClick={() => {handleSubtraction(element)}}>-</button>
+                          <button disabled={element.quantity ? false : true} className="btn" onClick={() => {handleSubtraction(element)}}>-</button>
                      </div>
 
                       </div>
