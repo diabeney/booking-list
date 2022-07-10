@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import Booked from '../Components/Booked';
+import img from '../imgs/close.png'
 
 function BookingLists({ props }) {
     const PRODUCTS = [...props]
@@ -21,6 +22,7 @@ function BookingLists({ props }) {
         let newCart = !cart;
         setCart(newCart)
     }
+
     return (
         <>
           {
@@ -38,8 +40,11 @@ function BookingLists({ props }) {
                       </div>
             })
             }
-            <button className='btn view-cart' onClick={() => { toggleCart() }}>{ cart ? 'View Cart': 'Close Cart'}</button>
-            <div style={{display: cart ? "none" :  "block",marginTop: '2rem'}}>
+            <button className='btn view-cart' onClick={() => { toggleCart() }}>View Cart</button>
+            <div className='booked' style={{ display: cart ? "none" : "block", position: 'absolute',top: '0px', right: '0px' }}>
+                <div className='close'>
+                    <img onClick={ toggleCart} src={ img } alt=''></img>
+                </div>
                 <Booked props={booked} />
             </div>
     </>
